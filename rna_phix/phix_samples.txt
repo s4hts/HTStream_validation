@@ -1,0 +1,5 @@
+phiX_adaptertrim
+phiX_none
+phiX_seqscreener_phix
+phiX_seqscreener_rrna
+phiX_std
