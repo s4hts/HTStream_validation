@@ -1,0 +1,4 @@
+jupyter_notebooks/.ipynb_checkpoints
+rna_phix/output/logs/*
+rna_phix/output/*
+.idea
