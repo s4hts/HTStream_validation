@@ -4,6 +4,7 @@ SRR11861905_deduper
 SRR11861905_lengthfilter
 SRR11861905_none
 SRR11861905_ntrimmer
+SRR11861905_polyatrim
 SRR11861905_qtrimmer
 SRR11861905_seqscreener_phix
 SRR11861905_seqscreener_rrna
@@ -15,6 +16,7 @@ SRR6048806_deduper
 SRR6048806_lengthfilter
 SRR6048806_none
 SRR6048806_ntrimmer
+SRR6048806_polyatrim
 SRR6048806_qtrimmer
 SRR6048806_seqscreener_phix
 SRR6048806_seqscreener_rrna

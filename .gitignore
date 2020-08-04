@@ -2,3 +2,5 @@ jupyter_notebooks/.ipynb_checkpoints
 rna_phix/output/logs/*
 rna_phix/output/*
 .idea
+eval_scripts/evaluation/.svn/*
+eval_scripts/evaluation/_pychache_/*

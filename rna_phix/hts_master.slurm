@@ -30,6 +30,9 @@ echo "SAMPLE NO SUFFIX: ${sample_nosuffix}"
 module load htstream/1.3.2
 
 
+call2="hts_Stats -L ${outpath}/${sample}/${sample}_universal.json \
+		-1 ${inpath}/${sample}/${sample}*1.fastq*.gz \
+		-2 ${inpath}/${sample}/${sample}*1.fastq*.gz -N 'universal stats'"
 #TODO make all of these variables that I can put together..
 
 if [[ ${type} == "seqscreener_phix" ]]; then
@@ -104,21 +107,24 @@ call="hts_Stats -L ${outpath}/${sample}/${sample}.json -1 ${inpath}/${sample_nos
 
 elif [[ ${type} == "skewerqtrim" ]]; then
 module load skewer
-call="skewer -Q 20 ${inpath}/${sample_nosuffix}*_1* \
+call="skewer -z -Q 20 ${inpath}/${sample_nosuffix}*_1* \
 		   ${inpath}/${sample_nosuffix}*_2* \
 	-o ${outpath}/${sample}/${sample}"
 
 
 elif [[ ${type} == "adapterremoval_adaptertrim" ]]; then
 source activate /share/biocore/keith/benchmarking/eval
-call="AdapterRemoval --file1 ${inpath}/${sample_nosuffix}*_1* \
+call="AdapterRemoval --gzip --file1 ${inpath}/${sample_nosuffix}*_1* \
 	             --file2 ${inpath}/${sample_nosuffix}*_2* \
-	             --basename ${outpath}/${sample}/${sample}"
+	             --basename ${outpath}/${sample}/${sample}.fastq"
 
 fi
 
 echo $call
 eval $call
+
+echo $call2
+eval $call2
 
 
 end=`date +%s`
